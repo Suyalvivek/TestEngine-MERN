@@ -39,15 +39,9 @@ const QuizForm = () => {
 
   const onSubmit = async (data: QuizSchema) => {
     try {
-      console.log("Submitting quiz data:", data);
-      console.log("Number of questions:", data.questions.length);
-      console.log("Questions:", data.questions);
-      
       const res = await createQuiz(data);
-      console.log("Quiz creation response:", res);
       
       if (res && res.data) {
-        console.log("Quiz saved successfully:", res.data);
         toast.success("Quiz Created Successfully!");
         reset();
       } else {
@@ -63,15 +57,15 @@ const QuizForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Create New Quiz</h1>
-          <p className="text-gray-600 mt-2">Build engaging quizzes for your audience</p>
+          <h1 className="text-3xl font-bold text-foreground">Create New Quiz</h1>
+          <p className="text-muted-foreground mt-2">Build engaging quizzes for your audience</p>
         </div>
         
-        <Card className="w-full max-w-4xl mx-auto border border-gray-200 shadow-sm">
+        <Card className="w-full max-w-4xl mx-auto border border-input shadow-sm">
           <CardHeader>
             <CardTitle className="text-blue-700 text-xl font-bold">
               Quiz Details
@@ -96,7 +90,7 @@ const QuizForm = () => {
               </div>
 
               {fields.map((field, index) => (
-                <div key={field.id} className="border p-4 rounded-lg shadow-sm bg-white">
+                <div key={field.id} className="border p-4 rounded-lg shadow-sm bg-card">
                   <Label>{`Question ${index + 1}`}</Label>
                   <Input
                     {...register(`questions.${index}.question`)}

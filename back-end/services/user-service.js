@@ -16,7 +16,6 @@ export const register = async (userObject) => {
 
         // Save user to database
         const savedUser = await newUser.save();
-        console.log("User registered successfully:", savedUser.email);
 
         return 'User registered successfully';
 
@@ -41,8 +40,6 @@ export const login = async (userObject) => {
         if (!isPasswordValid) {
             throw new Error('Invalid credentials');
         }
-
-        console.log("User login successful:", user.email);
 
         // Return user without password
         return {

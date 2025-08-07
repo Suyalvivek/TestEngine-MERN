@@ -128,13 +128,13 @@ const AttemptQuiz = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="container mx-auto px-4 py-8">
-          <Card className="max-w-md mx-auto border border-gray-200 shadow-sm">
+          <Card className="max-w-md mx-auto border border-input shadow-sm">
             <CardContent className="p-6 text-center">
               <h2 className="text-xl font-semibold text-red-600 mb-4">Error</h2>
-              <p className="text-gray-600 mb-4">{error}</p>
+              <p className="text-muted-foreground mb-4">{error}</p>
               <Button onClick={() => navigate("/dashboard")}>
                 Back to Dashboard
               </Button>
@@ -147,12 +147,12 @@ const AttemptQuiz = () => {
 
   if (!quiz) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading quiz...</p>
+            <p className="mt-4 text-muted-foreground">Loading quiz...</p>
           </div>
         </div>
       </div>
@@ -160,25 +160,25 @@ const AttemptQuiz = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header />
       <div className="container mx-auto px-4 py-8">
-        <Card className="max-w-4xl mx-auto border border-gray-200 shadow-sm">
+        <Card className="max-w-4xl mx-auto border border-input shadow-sm">
           <CardHeader>
             <div className="flex justify-between items-center">
               <CardTitle className="text-2xl">{quiz.title}</CardTitle>
               <div className="text-right">
-                <div className={`text-lg font-bold ${timeLeft <= 60 ? 'text-red-600' : 'text-gray-700'}`}>
+                <div className={`text-lg font-bold ${timeLeft <= 60 ? 'text-red-600' : 'text-foreground'}`}>
                   {formatTime(timeLeft)}
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-muted-foreground">
                   {answeredCount}/{quiz.questions.length} answered
                 </div>
               </div>
             </div>
             
             <div className="mt-4">
-              <div className="flex justify-between text-sm text-gray-600 mb-2">
+              <div className="flex justify-between text-sm text-muted-foreground mb-2">
                 <span>Progress</span>
                 <span>{Math.round(progress)}%</span>
               </div>
@@ -190,17 +190,17 @@ const AttemptQuiz = () => {
             {!result ? (
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {quiz.questions.map((q: any, index: number) => (
-                  <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <div key={index} className="bg-card p-6 rounded-lg shadow-sm border border-input">
                     <div className="flex justify-between items-start mb-4">
                       <p className="text-lg font-medium">
                         Question {index + 1} of {quiz.questions.length}
                       </p>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-muted-foreground">
                         {answers[index] ? "✓ Answered" : "○ Unanswered"}
                       </span>
                     </div>
                     
-                    <p className="mb-4 text-gray-800">{q.question}</p>
+                    <p className="mb-4 text-foreground">{q.question}</p>
                     
                     <RadioGroup
                       value={answers[index]}
@@ -211,7 +211,7 @@ const AttemptQuiz = () => {
                       }}
                     >
                       {q.options.map((opt: string, optIdx: number) => (
-                        <div key={optIdx} className="flex items-center space-x-3 p-3 rounded hover:bg-gray-50">
+                        <div key={optIdx} className="flex items-center space-x-3 p-3 rounded hover:bg-accent">
                           <RadioGroupItem value={opt} id={`q${index}-opt${optIdx}`} />
                           <Label htmlFor={`q${index}-opt${optIdx}`} className="text-base cursor-pointer">
                             {opt}
@@ -262,7 +262,7 @@ const AttemptQuiz = () => {
                 </div>
 
                 {result.results && result.results.length > 0 && (
-                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <div className="bg-card p-6 rounded-lg shadow-sm border border-input">
                     <h3 className="text-xl font-semibold mb-4">Detailed Results</h3>
                     <div className="space-y-4">
                       {result.results.map((item: any, index: number) => (
@@ -270,7 +270,7 @@ const AttemptQuiz = () => {
                           <div className="flex justify-between items-start">
                             <div className="flex-1">
                               <p className="font-medium">Question {index + 1}</p>
-                              <p className="text-sm text-gray-600">{item.question}</p>
+                              <p className="text-sm text-muted-foreground">{item.question}</p>
                             </div>
                             <div className={`px-3 py-1 rounded text-sm font-medium ${
                               item.isCorrect 
@@ -282,7 +282,7 @@ const AttemptQuiz = () => {
                           </div>
                           {!item.isCorrect && (
                             <div className="mt-2 text-sm">
-                              <p className="text-gray-600">
+                              <p className="text-muted-foreground">
                                 Your answer: <span className="font-medium">{item.userAnswer}</span>
                               </p>
                               <p className="text-green-600">

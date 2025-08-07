@@ -48,12 +48,12 @@ const QuizList = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading quizzes...</p>
+            <p className="mt-4 text-muted-foreground">Loading quizzes...</p>
           </div>
         </div>
       </div>
@@ -61,40 +61,40 @@ const QuizList = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Available Quizzes</h2>
-          <p className="text-gray-600">Test your knowledge with our interactive quizzes</p>
+          <h2 className="text-3xl font-bold text-foreground mb-2">Available Quizzes</h2>
+          <p className="text-muted-foreground">Test your knowledge with our interactive quizzes</p>
         </div>
 
         {quizzes.length === 0 ? (
           <div className="text-center py-12">
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200 max-w-md mx-auto">
-              <FileText className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">No Quizzes Available</h3>
-              <p className="text-gray-500">Check back later for new quizzes!</p>
+            <div className="bg-card rounded-xl p-8 shadow-sm border border-input max-w-md mx-auto">
+              <FileText className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-2">No Quizzes Available</h3>
+              <p className="text-muted-foreground">Check back later for new quizzes!</p>
             </div>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {quizzes.map((quiz) => (
-              <Card key={quiz._id} className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <Card key={quiz._id} className="border border-input shadow-sm hover:shadow-md transition-shadow duration-300">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-blue-600 text-lg">{quiz.title}</CardTitle>
                   {quiz.createdAt && (
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       Created: {formatDate(quiz.createdAt)}
                     </p>
                   )}
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-sm text-gray-600 line-clamp-2">
+                  <p className="text-sm text-muted-foreground line-clamp-2">
                     {quiz.description || "No description available"}
                   </p>
                   
-                  <div className="flex items-center justify-between text-sm text-gray-500">
+                  <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <FileText className="h-4 w-4" />
                       <span>{quiz.questions?.length || 0} questions</span>

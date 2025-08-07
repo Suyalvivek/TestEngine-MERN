@@ -43,9 +43,7 @@ const Login = () => {
     setError("");
     
     try {
-      console.log("Submitting login data:", userData);
       const result = await doLogin(userData);
-      console.log("Login result:", result);
 
       // Check if login was successful
       if (result.data && result.data.success && result.data.data && result.data.data.token) {
@@ -53,9 +51,6 @@ const Login = () => {
         localStorage.setItem("token", result.data.data.token);
         localStorage.setItem("role", result.data.data.user.role);
         localStorage.setItem("user", JSON.stringify(result.data.data.user));
-        
-        console.log("Token stored:", result.data.data.token);
-        console.log("Role stored:", result.data.data.user.role);
         
         // Navigate to intended destination or dashboard
         navigate(from, { replace: true });

@@ -22,18 +22,18 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600 mt-2">Welcome back! Ready to test your knowledge?</p>
+            <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
+            <p className="text-muted-foreground mt-2">Welcome back! Ready to test your knowledge?</p>
           </div>
           
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-gray-700 bg-white px-4 py-2 rounded-lg border border-gray-200">
+            <div className="flex items-center space-x-2 text-sm text-foreground bg-card px-4 py-2 rounded-lg border border-input">
               <User className="w-4 h-4" />
               <span className="capitalize font-medium">{role}</span>
             </div>
@@ -51,14 +51,14 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            <Card className="border border-gray-200 shadow-sm">
+            <Card className="border border-input shadow-sm">
               <CardHeader>
-                <CardTitle className="text-center text-gray-900 text-2xl font-bold">
+                <CardTitle className="text-center text-foreground text-2xl font-bold">
                   Welcome to Your Dashboard
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center space-y-4">
-                <p className="text-lg text-gray-700">
+                <p className="text-lg text-foreground">
                   Ready to test your knowledge?
                 </p>
 
@@ -66,7 +66,7 @@ const Dashboard = () => {
                   <BarChart2 className="w-10 h-10 text-blue-600" />
                 </div>
 
-                <p className="text-sm text-gray-500 italic">
+                <p className="text-sm text-muted-foreground italic">
                   Choose a quiz from the list and start your journey!
                 </p>
 
@@ -92,30 +92,30 @@ const Dashboard = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Quick Stats */}
-            <Card className="border border-gray-200 shadow-sm">
+            <Card className="border border-input shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-semibold text-gray-900">Quick Stats</CardTitle>
+                <CardTitle className="text-lg font-semibold text-foreground">Quick Stats</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Quizzes Taken</span>
+                  <span className="text-muted-foreground">Quizzes Taken</span>
                   <span className="font-semibold text-blue-600">0</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Average Score</span>
+                  <span className="text-muted-foreground">Average Score</span>
                   <span className="font-semibold text-green-600">-</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Total Time</span>
+                  <span className="text-muted-foreground">Total Time</span>
                   <span className="font-semibold text-purple-600">0 min</span>
                 </div>
               </CardContent>
             </Card>
 
             {/* Quick Actions */}
-            <Card className="border border-gray-200 shadow-sm">
+            <Card className="border border-input shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-semibold text-gray-900">Quick Actions</CardTitle>
+                <CardTitle className="text-lg font-semibold text-foreground">Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <Button 
@@ -137,7 +137,7 @@ const Dashboard = () => {
                 <Button 
                   onClick={handleLogout} 
                   variant="outline" 
-                  className="w-full justify-start text-red-600 border-red-200 hover:bg-red-50"
+                  className="w-full justify-start text-red-600 border-red-200 hover:bg-red-50 dark:hover:bg-red-950 dark:border-red-800"
                 >
                   <LogOut className="w-4 h-4 mr-2" />
                   Logout

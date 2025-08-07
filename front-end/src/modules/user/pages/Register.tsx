@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema } from "../validations/register-validation";
+import { registerSchema, } from "../validations/register-validation";
 import { Link, useNavigate } from "react-router-dom";
 import { doRegister } from "../api/user-api";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -22,8 +22,7 @@ const Register = () => {
   const [status, setStatus] = useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-
-  const {
+const {
     register,
     handleSubmit,
     formState: { errors },
@@ -33,15 +32,14 @@ const Register = () => {
       email: "",
       password: "",
       name: "",
-      role: "user",
+
     },
   });
+  
 
-  const registerSubmit = async (userData: unknown) => {
-    console.log("Form Submit", userData);
+  const registerSubmit = async (userData:unknown) => {
     try {
       const result = await doRegister(userData);
-      console.log("Result", result);
       if (result.data.success || result.status === 201) {
         navigate("/login");
       } else {
@@ -51,7 +49,6 @@ const Register = () => {
     } catch (err: any) {
       setStatus(true);
       setMessage(err.response?.data?.message || "Registration failed");
-      console.log("Register Fail", err);
     }
   };
 

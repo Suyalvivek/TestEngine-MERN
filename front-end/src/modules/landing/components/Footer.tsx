@@ -10,7 +10,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-background dark:bg-gray-950 text-foreground dark:text-gray-300">
       <div className="container px-4 mx-auto py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
@@ -20,21 +20,21 @@ const Footer = () => {
                 TestEngine
               </span>
             </div>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p className="text-muted-foreground mb-6 max-w-md">
               A simple and effective platform for creating engaging quizzes. 
               Make learning interactive and accessible to everyone.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -42,47 +42,47 @@ const Footer = () => {
 
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
-            <ul className="space-y-3 text-gray-400">
-              <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">API</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Updates</a></li>
+            <ul className="space-y-3 text-muted-foreground">
+              <li><a href="#features" className="hover:text-foreground dark:hover:text-white transition-colors">Features</a></li>
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Documentation</a></li>
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">API</a></li>
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Updates</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-3 text-gray-400">
-              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+            <ul className="space-y-3 text-muted-foreground">
+              <li><a href="#about" className="hover:text-foreground dark:hover:text-white transition-colors">About</a></li>
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Careers</a></li>
+              <li><a href="#contact" className="hover:text-foreground dark:hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
-            <ul className="space-y-3 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
+            <ul className="space-y-3 text-muted-foreground">
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Help Center</a></li>
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Documentation</a></li>
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Status</a></li>
+              <li><a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Community</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-muted-foreground text-sm">
             © {currentYear} TestEngine. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href="#" className="text-muted-foreground hover:text-foreground dark:hover:text-white text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href="#" className="text-muted-foreground hover:text-foreground dark:hover:text-white text-sm transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href="#" className="text-muted-foreground hover:text-foreground dark:hover:text-white text-sm transition-colors">
               Cookie Policy
             </a>
           </div>

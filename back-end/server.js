@@ -12,24 +12,23 @@ app.use(express.json());
 app.use('/api/v1', indexRoute);
 app.use(Error404);
 
-// app.get('/',(req,res)=>{
-//     res.send('Hello World')
-// })
-;
 const PORT = process.env.PORT || 5000;
 
 
 const promise = createConnection();
 promise.then(()=>{
-    console.log('DB Connection Created ... ');
+    // DB connection successful
     const server = app.listen(PORT, (err)=>{
     if(err){
-        console.log(chalk.redBright.italic('Server Crash '), err);
+        // Log server crash error
+        console.log(chalk.redBright.italic('Server Crash ') + err + '\n');
     }
     else{
-        console.log(chalk.greenBright.bold('Server Up and Running '), server.address().port);
+        // Log server start success
+        console.log(chalk.greenBright.bold('Server Up and Running ') + server.address().port + '\n');
     }
 })
 }).catch(err=>{
-    console.log(chalk.redBright.bold('DB Crash......... '), err);
+    // Log database connection error
+        console.log(chalk.redBright.bold('DB Crash......... ') + err + '\n');
 })

@@ -38,13 +38,12 @@ const QuizSchema = new mongoose.Schema({
 // Pre-save middleware to update the updatedAt field
 QuizSchema.pre('save', function(next) {
   this.updatedAt = Date.now();
-  console.log('🔄 Pre-save middleware triggered for quiz:', this.title);
   next();
 });
 
 // Post-save middleware for logging
 QuizSchema.post('save', function(doc) {
-  console.log('✅ Quiz saved successfully with ID:', doc._id);
+  // Success handling can be added here if needed
 });
 
 // Error handling middleware
