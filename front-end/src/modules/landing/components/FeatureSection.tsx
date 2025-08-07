@@ -1,19 +1,13 @@
-import React from 'react';
 import { 
   Edit3, 
   Trophy, 
-  Users, 
-  Zap, 
   Check, 
   Star, 
   ArrowRight,
   Clock,
   Target,
-  BookOpen,
   BarChart3,
-  Award,
   Play,
-  Settings,
   Eye
 } from 'lucide-react';
 
