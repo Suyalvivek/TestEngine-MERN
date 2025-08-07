@@ -1,5 +1,4 @@
 import { register as registerUser, login as loginUser, getUserById } from '../services/user-service.js';
-import { encryptPassword, compareHash } from '../utils/services/password-hash.js';
 import { generateToken } from '../utils/services/token.js';
 
 export const login = async (req, res) => {
