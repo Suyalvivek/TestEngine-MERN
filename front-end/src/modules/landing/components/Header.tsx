@@ -1,21 +1,8 @@
 import React from 'react';
 import { 
-  Edit3, 
-  Trophy, 
-  Users, 
-  Zap, 
-  Check, 
-  Star, 
   ArrowRight,
   Menu,
   X,
-  Github,
-  Twitter,
-  Linkedin,
-  Mail,
-  Crown,
-  Target,
-  BookOpen,
   Rocket
 } from 'lucide-react';
 import { useState } from 'react';

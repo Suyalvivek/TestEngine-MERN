@@ -34,7 +34,7 @@ const AttemptQuiz = () => {
     defaultValues: { answers: [] },
   });
 
-  const { register, handleSubmit, setValue, watch } = form;
+  const { handleSubmit, setValue, watch } = form;
 
   useEffect(() => {
     const fetchQuiz = async () => {

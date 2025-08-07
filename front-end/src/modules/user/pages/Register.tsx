@@ -37,7 +37,7 @@ const {
   });
   
 
-  const registerSubmit = async (userData:unknown) => {
+  const registerSubmit = async (userData:any) => {
     try {
       const result = await doRegister(userData);
       if (result.data.success || result.status === 201) {
